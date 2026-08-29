@@ -1,5 +1,5 @@
 const RATE_API = 'https://open.er-api.com/v6/latest/USD';
-const SUPPORTED = ['USD', 'CNY', 'EUR', 'GBP', 'JPY', 'HKD', 'TWD', 'CAD'];
+const SUPPORTED = ['USD', 'CNY', 'EUR', 'GBP', 'JPY', 'KRW', 'AUD', 'CAD', 'SGD', 'HKD', 'TWD'];
 
 const json = (data, status = 200) => new Response(JSON.stringify(data), {
   status,

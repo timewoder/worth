@@ -10,7 +10,7 @@ from urllib.request import Request, urlopen
 
 RATE_API = "https://open.er-api.com/v6/latest/USD"
 RATE_CACHE = {"expires": 0, "payload": None}
-SUPPORTED = ("USD", "CNY", "EUR", "GBP", "JPY", "HKD", "TWD", "CAD")
+SUPPORTED = ("USD", "CNY", "EUR", "GBP", "JPY", "KRW", "AUD", "CAD", "SGD", "HKD", "TWD")
 
 
 class Handler(SimpleHTTPRequestHandler):
