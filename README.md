@@ -2,7 +2,7 @@
 
 [中文](#中文) · [English](#english)
 
-A responsive calculator for estimating a VPS server's remaining value.
+An Apple-inspired calculator for estimating a server's remaining value and transaction settlement costs.
 
 [![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/timewoder/worth)
 
@@ -10,16 +10,17 @@ A responsive calculator for estimating a VPS server's remaining value.
 
 ### 简介
 
-Worth 是一个 VPS 服务器剩余价值计算器，可根据续费价格、付款周期、交易日期和到期日期，快速估算服务器当前剩余价值。
+Worth 是一个服务器剩余价值计算器，可根据续费价格、付款周期、交易时间和到期时间，估算服务器当前剩余价值，并计算交易溢价、Push 费用、中介服务费以及买卖双方的最终结算金额。
 
 ### 功能
 
-- 支持 USD、CNY、EUR、GBP、JPY、KRW、AUD、CAD、SGD 和 HKD
-- 通过 ExchangeRate-API 获取并缓存实时汇率
+- 支持 USD、CNY、EUR、GBP、JPY、HKD、TWD 和 CAD
+- 通过 ExchangeRate-API 获取实时汇率，也允许手动修改
 - 支持月付、季付、半年付、年付、两年付和三年付
-- 支持自动计算或点击按钮手动计算
-- 展示交易日期、到期日期、剩余天数、总价值和剩余价值
-- 一键复制 Markdown 格式计算结果
+- 支持按日期或精确到时分计算剩余有效期
+- 支持按“实付卖家”或“溢价”两种方式填写成交价格
+- Push 费用和自定义中介服务费可指定买家、卖家或双方平摊
+- 一键复制结算摘要并生成带参数的分享链接
 - 自动跟随系统浅色/深色模式，也可手动选择并保存偏好
 - 响应式布局，适配手机、平板、macOS 和 Windows 浏览器
 - 支持 Python 本地运行与 Cloudflare Workers 边缘部署
@@ -88,16 +89,17 @@ Worker 会托管 `public/` 内的静态文件，并优先处理 `/api/rates`。�
 
 ### Overview
 
-Worth estimates a VPS server's remaining value from its renewal price, billing period, transaction date, and expiry date.
+Worth estimates a server's remaining value from its renewal price, billing period, transaction date, and expiry date. It also calculates premiums, push fees, escrow fees, and the final amount paid or received by each party.
 
 ### Features
 
-- Supports USD, CNY, EUR, GBP, JPY, KRW, AUD, CAD, SGD, and HKD
-- Fetches and caches live rates from ExchangeRate-API
+- Supports USD, CNY, EUR, GBP, JPY, HKD, TWD, and CAD
+- Fetches live rates from ExchangeRate-API while allowing manual overrides
 - Supports monthly, quarterly, semiannual, annual, two-year, and three-year billing
-- Calculates automatically or on demand
-- Shows transaction date, expiry date, remaining days, total value, and remaining value
-- Copies the result in Markdown format
+- Calculates by date or down to the minute
+- Accepts either the seller payment or the premium as the transaction input
+- Allocates push fees and custom escrow fees to the buyer, seller, or both
+- Copies a settlement summary and creates shareable parameterized URLs
 - Follows the system light/dark appearance with a persistent manual override
 - Responsive across phones, tablets, macOS, and Windows browsers
 - Runs locally with Python or at the edge with Cloudflare Workers
