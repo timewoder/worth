@@ -4,6 +4,8 @@
 
 An Apple-inspired calculator for estimating a server's remaining value and transaction settlement costs.
 
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/mutu5012/worth)
+
 ## 中文
 
 ### 简介
@@ -52,6 +54,16 @@ npm run dev
 ```
 
 ### 部署到 Cloudflare Workers
+
+#### 一键部署（推荐）
+
+点击下面的按钮，登录 Cloudflare 后按页面提示创建并部署 Worker：
+
+[![部署到 Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/mutu5012/worth)
+
+部署流程会自动复制本 GitHub 仓库、安装依赖并读取 `wrangler.jsonc`。完成后，Cloudflare 会提供一个 `*.workers.dev` 访问地址。
+
+#### 使用命令行部署
 
 ```bash
 npm install
@@ -121,6 +133,16 @@ npm run dev
 ```
 
 ### Deploy to Cloudflare Workers
+
+#### One-click deployment (recommended)
+
+Click the button below, sign in to Cloudflare, and follow the prompts to create and deploy the Worker:
+
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/mutu5012/worth)
+
+The flow copies this GitHub repository, installs its dependencies, and reads `wrangler.jsonc` automatically. Cloudflare provides a `*.workers.dev` URL when deployment finishes.
+
+#### Deploy from the command line
 
 ```bash
 npm install
